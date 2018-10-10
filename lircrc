@@ -1,0 +1,2186 @@
+#############################################################
+# CONEXUS LIRC Configuration                                #
+# based on FBDVR401 remote with code adresses SAT1/SAT2/TV1 #
+# based on FBTV401X remote with code adresses VCR1/VCR2/TV2 #
+#############################################################
+
+begin irexec
+
+## ------------------------------------- ##
+## --------------- CODES --------------- ##
+## ------------------------------------- ##
+begin
+      prog   = irexec
+      button = KEY_CODESAT1
+      config = /boot/conexus.sh sat1 blink 
+end
+
+begin
+      prog   = irexec
+      button = KEY_CODESAT2
+      config = /boot/conexus.sh sat2 blink 
+end
+
+begin
+      prog   = irexec
+      button = KEY_CODETV1
+      config = /boot/conexus.sh tv1 blink 
+end
+
+begin
+      prog   = irexec
+      button = KEY_CODEVCR1
+      config = /boot/conexus.sh vcr1 blink 
+end
+
+begin
+      prog   = irexec
+      button = KEY_CODEVCR2
+      config = /boot/conexus.sh vcr2 blink 
+end
+
+begin
+      prog   = irexec
+      button = KEY_CODETV2
+      config = /boot/conexus.sh tv2 blink 
+end
+
+
+## ------------------------------------- ##
+## --------------- SAT 1 --------------- ##
+## ------------------------------------- ##
+begin
+      prog   = irexec
+      remote = FBDVR401_CODESAT1
+      button = KEY_POWER
+      config = /boot/conexus.sh sat1 standby 
+end
+
+begin
+      prog   = irexec
+      remote = FBDVR401_CODESAT1
+      button = KEY_MUTE
+      config = /boot/conexus.sh sat1 mute 
+end
+
+begin
+      prog   = irexec
+      remote = FBDVR401_CODESAT1
+      button = KEY_SLEEP
+      config = /boot/conexus.sh sat1 setsleeptimer:900
+end
+
+begin
+      prog   = irexec
+      remote = FBDVR401_CODESAT1
+      button = KEY_VOLUMEUP
+      repeat = 2
+      delay  = 4
+      config = /boot/conexus.sh sat1 vol+
+end
+
+begin
+      prog   = irexec
+      remote = FBDVR401_CODESAT1
+      button = KEY_VOLUMEDOWN
+      repeat = 2
+      delay  = 4
+      config = /boot/conexus.sh sat1 vol-
+end
+
+begin
+      prog   = irexec
+      remote = FBDVR401_CODESAT1
+      button = KEY_RIGHT
+      repeat = 2
+      delay  = 4
+      config = /boot/conexus.sh sat1 vol+
+end
+
+begin
+      prog   = irexec
+      remote = FBDVR401_CODESAT1
+      button = KEY_LEFT
+      repeat = 2
+      delay  = 4
+      config = /boot/conexus.sh sat1 vol-
+end
+
+begin
+      prog   = irexec
+      remote = FBDVR401_CODESAT1
+      button = KEY_UP
+      repeat = 2
+      delay  = 4
+      config = /boot/conexus.sh sat1 next
+end
+
+begin
+      prog   = irexec
+      remote = FBDVR401_CODESAT1
+      button = KEY_DOWN
+      repeat = 2
+      delay  = 4
+      config = /boot/conexus.sh sat1 previous
+end
+
+begin
+      prog   = irexec
+      remote = FBDVR401_CODESAT1
+      button = KEY_CHANNELUP
+      repeat = 2
+      delay  = 4
+      config = /boot/conexus.sh sat1 nextpreset
+end
+
+begin
+      prog   = irexec
+      remote = FBDVR401_CODESAT1
+      button = KEY_CHANNELDOWN
+      repeat = 2
+      delay  = 4
+      config = /boot/conexus.sh sat1 previouspreset
+end
+
+begin
+      prog   = irexec
+      remote = FBDVR401_CODESAT1
+      button = KEY_FORWARD
+      repeat = 2
+      delay  = 4
+      config = /boot/conexus.sh sat1 next
+end
+
+begin
+      prog   = irexec
+      remote = FBDVR401_CODESAT1
+      button = KEY_REWIND
+      repeat = 2
+      delay  = 4
+      config = /boot/conexus.sh sat1 previous
+end
+
+begin
+      prog   = irexec
+      remote = FBDVR401_CODESAT1
+      button = KEY_PLAYPAUSE
+      config = /boot/conexus.sh sat1 playpause
+end
+
+begin
+      prog   = irexec
+      remote = FBDVR401_CODESAT1
+      button = KEY_STOP
+      config = /boot/conexus.sh sat1 pause
+end
+
+begin
+      prog   = irexec
+      remote = FBDVR401_CODESAT1
+      button = KEY_1
+      config = /boot/conexus.sh sat1 presetselect:0 
+end
+
+begin
+      prog   = irexec
+      remote = FBDVR401_CODESAT1
+      button = KEY_2
+      config = /boot/conexus.sh sat1 presetselect:1
+end
+
+begin
+      prog   = irexec
+      remote = FBDVR401_CODESAT1
+      button = KEY_3
+      config = /boot/conexus.sh sat1 presetselect:2
+end
+
+begin
+      prog   = irexec
+      remote = FBDVR401_CODESAT1
+      button = KEY_4
+      config = /boot/conexus.sh sat1 presetselect:3
+end
+
+begin
+      prog   = irexec
+      remote = FBDVR401_CODESAT1
+      button = KEY_5
+      config = /boot/conexus.sh sat1 presetselect:4
+end
+
+begin
+      prog   = irexec
+      remote = FBDVR401_CODESAT1
+      button = KEY_6
+      config = /boot/conexus.sh sat1 presetselect:5
+end
+
+begin
+      prog   = irexec
+      remote = FBDVR401_CODESAT1
+      button = KEY_7
+      config = /boot/conexus.sh sat1 presetselect:6
+end
+
+begin
+      prog   = irexec
+      remote = FBDVR401_CODESAT1
+      button = KEY_8
+      config = /boot/conexus.sh sat1 presetselect:7
+end
+
+begin
+      prog   = irexec
+      remote = FBDVR401_CODESAT1
+      button = KEY_9
+      config = /boot/conexus.sh sat1 presetselect:8
+end
+
+begin
+      prog   = irexec
+      remote = FBDVR401_CODESAT1
+      button = KEY_0
+      config = /boot/conexus.sh sat1 presetselect:9
+end
+
+begin
+      prog   = irexec
+      remote = FBDVR401_CODESAT1
+      button = KEY_RED
+      config = /boot/conexus.sh sat1 mode:0
+end
+
+begin
+      prog   = irexec
+      remote = FBDVR401_CODESAT1
+      button = KEY_GREEN
+      config = /boot/conexus.sh sat1 mode:1
+end
+
+begin
+      prog   = irexec
+      remote = FBDVR401_CODESAT1
+      button = KEY_YELLOW
+      config = /boot/conexus.sh sat1 mode:2
+end
+
+begin
+      prog   = irexec
+      remote = FBDVR401_CODESAT1
+      button = KEY_BLUE
+      config = /boot/conexus.sh sat1 mode:3
+end
+
+begin
+      prog   = irexec
+      remote = FBDVR401_CODESAT1
+      button = KEY_MENU
+      config = /boot/conexus.sh sat1 mode:4
+end
+
+begin
+      prog   = irexec
+      remote = FBDVR401_CODESAT1
+      button = KEY_TIMER
+      config = /boot/conexus.sh sat1 mode:5
+end
+
+begin
+      prog   = irexec
+      remote = FBDVR401_CODESAT1
+      button = KEY_AUDIO
+      config = /boot/conexus.sh sat1 mode:6
+end
+
+begin
+      prog   = irexec
+      remote = FBDVR401_CODESAT1
+      button = KEY_ZOOM
+      config = /boot/conexus.sh sat1 mode:7
+end
+
+begin
+      prog   = irexec
+      remote = FBDVR401_CODESAT1
+      button = KEY_TEXT
+      config = /boot/conexus.sh sat1 mode:8
+end
+
+begin
+      prog   = irexec
+      remote = FBDVR401_CODESAT1
+      button = KEY_PAUSE
+      config = /boot/conexus.sh sat1 mode:9
+end
+
+begin
+      prog   = irexec
+      remote = FBDVR401_CODESAT1
+      button = KEY_HDMI
+      config = /boot/conexus.sh sat1 mode:10
+end
+
+begin
+      prog   = irexec
+      remote = FBDVR401_CODESAT1
+      button = KEY_PIP
+      config = /boot/conexus.sh sat1 mode:11
+end
+
+begin
+      prog   = irexec
+      remote = FBDVR401_CODESAT1
+      button = KEY_EPG
+      config = /boot/conexus.sh sat1 mode:dab
+end
+
+begin
+      prog   = irexec
+      remote = FBDVR401_CODESAT1
+      button = KEY_WWW
+      config = /boot/conexus.sh sat1 mode:ir
+end
+
+begin
+      prog   = irexec
+      remote = FBDVR401_CODESAT1
+      button = KEY_BACK
+      config = /boot/conexus.sh sat1 mode:spotify
+end
+
+begin
+      prog   = irexec
+      remote = FBDVR401_CODESAT1
+      button = KEY_INFO
+      config = /boot/conexus.sh sat1 mode:auxin
+end
+
+begin
+      prog   = irexec
+      remote = FBDVR401_CODESAT1
+      button = KEY_TVRADIO
+      config = /boot/conexus.sh sat1 mode:fm
+end
+
+begin
+      prog   = irexec
+      remote = FBDVR401_CODESAT1
+      button = KEY_RECORD
+      config = /boot/conexus.sh sat1 mode:bt
+end
+
+begin
+      prog   = irexec
+      remote = FBDVR401_CODESAT1
+      button = KEY_OPTION
+      config = /boot/conexus.sh sat1 nextmode
+end
+
+begin
+      prog   = irexec
+      remote = FBDVR401_CODESAT1
+      button = KEY_NAV
+      config = /boot/conexus.sh sat1 previousmode
+end
+
+begin
+      prog   = irexec
+      remote = FBDVR401_CODESAT1
+      button = KEY_PAGEUP
+      repeat = 2
+      delay  = 4
+      config = /boot/conexus.sh sat1 nextmode
+end
+
+begin
+      prog   = irexec
+      remote = FBDVR401_CODESAT1
+      button = KEY_PAGEDOWN
+      repeat = 2
+      delay  = 4
+      config = /boot/conexus.sh sat1 previousmode
+end
+
+
+## ------------------------------------- ##
+## --------------- SAT 2 --------------- ##
+## ------------------------------------- ##
+begin
+      prog   = irexec
+      remote = FBDVR401_CODESAT2
+      button = KEY_POWER
+      config = /boot/conexus.sh sat2 standby 
+end
+
+begin
+      prog   = irexec
+      remote = FBDVR401_CODESAT2
+      button = KEY_MUTE
+      config = /boot/conexus.sh sat2 mute 
+end
+
+begin
+      prog   = irexec
+      remote = FBDVR401_CODESAT2
+      button = KEY_SLEEP
+      config = /boot/conexus.sh sat2 setsleeptimer:900
+end
+
+begin
+      prog   = irexec
+      remote = FBDVR401_CODESAT2
+      button = KEY_VOLUMEUP
+      repeat = 2
+      delay  = 4
+      config = /boot/conexus.sh sat2 vol+
+end
+
+begin
+      prog   = irexec
+      remote = FBDVR401_CODESAT2
+      button = KEY_VOLUMEDOWN
+      repeat = 2
+      delay  = 4
+      config = /boot/conexus.sh sat2 vol-
+end
+
+begin
+      prog   = irexec
+      remote = FBDVR401_CODESAT2
+      button = KEY_RIGHT
+      repeat = 2
+      delay  = 4
+      config = /boot/conexus.sh sat2 vol+
+end
+
+begin
+      prog   = irexec
+      remote = FBDVR401_CODESAT2
+      button = KEY_LEFT
+      repeat = 2
+      delay  = 4
+      config = /boot/conexus.sh sat2 vol-
+end
+
+begin
+      prog   = irexec
+      remote = FBDVR401_CODESAT2
+      button = KEY_UP
+      repeat = 2
+      delay  = 4
+      config = /boot/conexus.sh sat2 next
+end
+
+begin
+      prog   = irexec
+      remote = FBDVR401_CODESAT2
+      button = KEY_DOWN
+      repeat = 2
+      delay  = 4
+      config = /boot/conexus.sh sat2 previous
+end
+
+begin
+      prog   = irexec
+      remote = FBDVR401_CODESAT2
+      button = KEY_CHANNELUP
+      repeat = 2
+      delay  = 4
+      config = /boot/conexus.sh sat2 nextpreset
+end
+
+begin
+      prog   = irexec
+      remote = FBDVR401_CODESAT2
+      button = KEY_CHANNELDOWN
+      repeat = 2
+      delay  = 4
+      config = /boot/conexus.sh sat2 previouspreset
+end
+
+begin
+      prog   = irexec
+      remote = FBDVR401_CODESAT2
+      button = KEY_FORWARD
+      repeat = 2
+      delay  = 4
+      config = /boot/conexus.sh sat2 next
+end
+
+begin
+      prog   = irexec
+      remote = FBDVR401_CODESAT2
+      button = KEY_REWIND
+      repeat = 2
+      delay  = 4
+      config = /boot/conexus.sh sat2 previous
+end
+
+begin
+      prog   = irexec
+      remote = FBDVR401_CODESAT2
+      button = KEY_PLAYPAUSE
+      config = /boot/conexus.sh sat2 playpause
+end
+
+begin
+      prog   = irexec
+      remote = FBDVR401_CODESAT2
+      button = KEY_STOP
+      config = /boot/conexus.sh sat2 pause
+end
+
+begin
+      prog   = irexec
+      remote = FBDVR401_CODESAT2
+      button = KEY_1
+      config = /boot/conexus.sh sat2 presetselect:0 
+end
+
+begin
+      prog   = irexec
+      remote = FBDVR401_CODESAT2
+      button = KEY_2
+      config = /boot/conexus.sh sat2 presetselect:1
+end
+
+begin
+      prog   = irexec
+      remote = FBDVR401_CODESAT2
+      button = KEY_3
+      config = /boot/conexus.sh sat2 presetselect:2
+end
+
+begin
+      prog   = irexec
+      remote = FBDVR401_CODESAT2
+      button = KEY_4
+      config = /boot/conexus.sh sat2 presetselect:3
+end
+
+begin
+      prog   = irexec
+      remote = FBDVR401_CODESAT2
+      button = KEY_5
+      config = /boot/conexus.sh sat2 presetselect:4
+end
+
+begin
+      prog   = irexec
+      remote = FBDVR401_CODESAT2
+      button = KEY_6
+      config = /boot/conexus.sh sat2 presetselect:5
+end
+
+begin
+      prog   = irexec
+      remote = FBDVR401_CODESAT2
+      button = KEY_7
+      config = /boot/conexus.sh sat2 presetselect:6
+end
+
+begin
+      prog   = irexec
+      remote = FBDVR401_CODESAT2
+      button = KEY_8
+      config = /boot/conexus.sh sat2 presetselect:7
+end
+
+begin
+      prog   = irexec
+      remote = FBDVR401_CODESAT2
+      button = KEY_9
+      config = /boot/conexus.sh sat2 presetselect:8
+end
+
+begin
+      prog   = irexec
+      remote = FBDVR401_CODESAT2
+      button = KEY_0
+      config = /boot/conexus.sh sat2 presetselect:9
+end
+
+begin
+      prog   = irexec
+      remote = FBDVR401_CODESAT2
+      button = KEY_RED
+      config = /boot/conexus.sh sat2 mode:0
+end
+
+begin
+      prog   = irexec
+      remote = FBDVR401_CODESAT2
+      button = KEY_GREEN
+      config = /boot/conexus.sh sat2 mode:1
+end
+
+begin
+      prog   = irexec
+      remote = FBDVR401_CODESAT2
+      button = KEY_YELLOW
+      config = /boot/conexus.sh sat2 mode:2
+end
+
+begin
+      prog   = irexec
+      remote = FBDVR401_CODESAT2
+      button = KEY_BLUE
+      config = /boot/conexus.sh sat2 mode:3
+end
+
+begin
+      prog   = irexec
+      remote = FBDVR401_CODESAT2
+      button = KEY_MENU
+      config = /boot/conexus.sh sat2 mode:4
+end
+
+begin
+      prog   = irexec
+      remote = FBDVR401_CODESAT2
+      button = KEY_TIMER
+      config = /boot/conexus.sh sat2 mode:5
+end
+
+begin
+      prog   = irexec
+      remote = FBDVR401_CODESAT2
+      button = KEY_AUDIO
+      config = /boot/conexus.sh sat2 mode:6
+end
+
+begin
+      prog   = irexec
+      remote = FBDVR401_CODESAT2
+      button = KEY_ZOOM
+      config = /boot/conexus.sh sat2 mode:7
+end
+
+begin
+      prog   = irexec
+      remote = FBDVR401_CODESAT2
+      button = KEY_TEXT
+      config = /boot/conexus.sh sat2 mode:8
+end
+
+begin
+      prog   = irexec
+      remote = FBDVR401_CODESAT2
+      button = KEY_PAUSE
+      config = /boot/conexus.sh sat2 mode:9
+end
+
+begin
+      prog   = irexec
+      remote = FBDVR401_CODESAT2
+      button = KEY_HDMI
+      config = /boot/conexus.sh sat2 mode:10
+end
+
+begin
+      prog   = irexec
+      remote = FBDVR401_CODESAT2
+      button = KEY_PIP
+      config = /boot/conexus.sh sat2 mode:11
+end
+
+begin
+      prog   = irexec
+      remote = FBDVR401_CODESAT2
+      button = KEY_EPG
+      config = /boot/conexus.sh sat2 mode:dab
+end
+
+begin
+      prog   = irexec
+      remote = FBDVR401_CODESAT2
+      button = KEY_WWW
+      config = /boot/conexus.sh sat2 mode:ir
+end
+
+begin
+      prog   = irexec
+      remote = FBDVR401_CODESAT2
+      button = KEY_BACK
+      config = /boot/conexus.sh sat2 mode:spotify
+end
+
+begin
+      prog   = irexec
+      remote = FBDVR401_CODESAT2
+      button = KEY_INFO
+      config = /boot/conexus.sh sat2 mode:auxin
+end
+
+begin
+      prog   = irexec
+      remote = FBDVR401_CODESAT2
+      button = KEY_TVRADIO
+      config = /boot/conexus.sh sat2 mode:fm
+end
+
+begin
+      prog   = irexec
+      remote = FBDVR401_CODESAT2
+      button = KEY_RECORD
+      config = /boot/conexus.sh sat2 mode:bt
+end
+
+begin
+      prog   = irexec
+      remote = FBDVR401_CODESAT2
+      button = KEY_OPTION
+      config = /boot/conexus.sh sat2 nextmode
+end
+
+begin
+      prog   = irexec
+      remote = FBDVR401_CODESAT2
+      button = KEY_NAV
+      config = /boot/conexus.sh sat2 previousmode
+end
+
+begin
+      prog   = irexec
+      remote = FBDVR401_CODESAT2
+      button = KEY_PAGEUP
+      repeat = 2
+      delay  = 4
+      config = /boot/conexus.sh sat2 nextmode
+end
+
+begin
+      prog   = irexec
+      remote = FBDVR401_CODESAT2
+      button = KEY_PAGEDOWN
+      repeat = 2
+      delay  = 4
+      config = /boot/conexus.sh sat2 previousmode
+end
+
+## ------------------------------------- ##
+## ---------------  TV1  --------------- ##
+## ------------------------------------- ##
+begin
+      prog   = irexec
+      remote = FBDVR401_CODETV1
+      button = KEY_POWER
+      config = /boot/conexus.sh tv1 standby 
+end
+
+begin
+      prog   = irexec
+      remote = FBDVR401_CODETV1
+      button = KEY_MUTE
+      config = /boot/conexus.sh tv1 mute 
+end
+
+begin
+      prog   = irexec
+      remote = FBDVR401_CODETV1
+      button = KEY_SLEEP
+      config = /boot/conexus.sh tv1 setsleeptimer:900
+end
+
+begin
+      prog   = irexec
+      remote = FBDVR401_CODETV1
+      button = KEY_VOLUMEUP
+      repeat = 2
+      delay  = 4
+      config = /boot/conexus.sh tv1 vol+
+end
+
+begin
+      prog   = irexec
+      remote = FBDVR401_CODETV1
+      button = KEY_VOLUMEDOWN
+      repeat = 2
+      delay  = 4
+      config = /boot/conexus.sh tv1 vol-
+end
+
+begin
+      prog   = irexec
+      remote = FBDVR401_CODETV1
+      button = KEY_RIGHT
+      repeat = 2
+      delay  = 4
+      config = /boot/conexus.sh tv1 vol+
+end
+
+begin
+      prog   = irexec
+      remote = FBDVR401_CODETV1
+      button = KEY_LEFT
+      repeat = 2
+      delay  = 4
+      config = /boot/conexus.sh tv1 vol-
+end
+
+begin
+      prog   = irexec
+      remote = FBDVR401_CODETV1
+      button = KEY_UP
+      repeat = 2
+      delay  = 4
+      config = /boot/conexus.sh tv1 next
+end
+
+begin
+      prog   = irexec
+      remote = FBDVR401_CODETV1
+      button = KEY_DOWN
+      repeat = 2
+      delay  = 4
+      config = /boot/conexus.sh tv1 previous
+end
+
+begin
+      prog   = irexec
+      remote = FBDVR401_CODETV1
+      button = KEY_CHANNELUP
+      repeat = 2
+      delay  = 4
+      config = /boot/conexus.sh tv1 nextpreset
+end
+
+begin
+      prog   = irexec
+      remote = FBDVR401_CODETV1
+      button = KEY_CHANNELDOWN
+      repeat = 2
+      delay  = 4
+      config = /boot/conexus.sh tv1 previouspreset
+end
+
+begin
+      prog   = irexec
+      remote = FBDVR401_CODETV1
+      button = KEY_FORWARD
+      repeat = 2
+      delay  = 4
+      config = /boot/conexus.sh tv1 next
+end
+
+begin
+      prog   = irexec
+      remote = FBDVR401_CODETV1
+      button = KEY_REWIND
+      repeat = 2
+      delay  = 4
+      config = /boot/conexus.sh tv1 previous
+end
+
+begin
+      prog   = irexec
+      remote = FBDVR401_CODETV1
+      button = KEY_PLAYPAUSE
+      config = /boot/conexus.sh tv1 playpause
+end
+
+begin
+      prog   = irexec
+      remote = FBDVR401_CODETV1
+      button = KEY_STOP
+      config = /boot/conexus.sh tv1 pause
+end
+
+begin
+      prog   = irexec
+      remote = FBDVR401_CODETV1
+      button = KEY_1
+      config = /boot/conexus.sh tv1 presetselect:0 
+end
+
+begin
+      prog   = irexec
+      remote = FBDVR401_CODETV1
+      button = KEY_2
+      config = /boot/conexus.sh tv1 presetselect:1
+end
+
+begin
+      prog   = irexec
+      remote = FBDVR401_CODETV1
+      button = KEY_3
+      config = /boot/conexus.sh tv1 presetselect:2
+end
+
+begin
+      prog   = irexec
+      remote = FBDVR401_CODETV1
+      button = KEY_4
+      config = /boot/conexus.sh tv1 presetselect:3
+end
+
+begin
+      prog   = irexec
+      remote = FBDVR401_CODETV1
+      button = KEY_5
+      config = /boot/conexus.sh tv1 presetselect:4
+end
+
+begin
+      prog   = irexec
+      remote = FBDVR401_CODETV1
+      button = KEY_6
+      config = /boot/conexus.sh tv1 presetselect:5
+end
+
+begin
+      prog   = irexec
+      remote = FBDVR401_CODETV1
+      button = KEY_7
+      config = /boot/conexus.sh tv1 presetselect:6
+end
+
+begin
+      prog   = irexec
+      remote = FBDVR401_CODETV1
+      button = KEY_8
+      config = /boot/conexus.sh tv1 presetselect:7
+end
+
+begin
+      prog   = irexec
+      remote = FBDVR401_CODETV1
+      button = KEY_9
+      config = /boot/conexus.sh tv1 presetselect:8
+end
+
+begin
+      prog   = irexec
+      remote = FBDVR401_CODETV1
+      button = KEY_0
+      config = /boot/conexus.sh tv1 presetselect:9
+end
+
+begin
+      prog   = irexec
+      remote = FBDVR401_CODETV1
+      button = KEY_RED
+      config = /boot/conexus.sh tv1 mode:0
+end
+
+begin
+      prog   = irexec
+      remote = FBDVR401_CODETV1
+      button = KEY_GREEN
+      config = /boot/conexus.sh tv1 mode:1
+end
+
+begin
+      prog   = irexec
+      remote = FBDVR401_CODETV1
+      button = KEY_YELLOW
+      config = /boot/conexus.sh tv1 mode:2
+end
+
+begin
+      prog   = irexec
+      remote = FBDVR401_CODETV1
+      button = KEY_BLUE
+      config = /boot/conexus.sh tv1 mode:3
+end
+
+begin
+      prog   = irexec
+      remote = FBDVR401_CODETV1
+      button = KEY_MENU
+      config = /boot/conexus.sh tv1 mode:4
+end
+
+begin
+      prog   = irexec
+      remote = FBDVR401_CODETV1
+      button = KEY_TIMER
+      config = /boot/conexus.sh tv1 mode:5
+end
+
+begin
+      prog   = irexec
+      remote = FBDVR401_CODETV1
+      button = KEY_AUDIO
+      config = /boot/conexus.sh tv1 mode:6
+end
+
+begin
+      prog   = irexec
+      remote = FBDVR401_CODETV1
+      button = KEY_ZOOM
+      config = /boot/conexus.sh tv1 mode:7
+end
+
+begin
+      prog   = irexec
+      remote = FBDVR401_CODETV1
+      button = KEY_TEXT
+      config = /boot/conexus.sh tv1 mode:8
+end
+
+begin
+      prog   = irexec
+      remote = FBDVR401_CODETV1
+      button = KEY_PAUSE
+      config = /boot/conexus.sh tv1 mode:9
+end
+
+begin
+      prog   = irexec
+      remote = FBDVR401_CODETV1
+      button = KEY_HDMI
+      config = /boot/conexus.sh tv1 mode:10
+end
+
+begin
+      prog   = irexec
+      remote = FBDVR401_CODETV1
+      button = KEY_PIP
+      config = /boot/conexus.sh tv1 mode:11
+end
+
+begin
+      prog   = irexec
+      remote = FBDVR401_CODETV1
+      button = KEY_EPG
+      config = /boot/conexus.sh tv1 mode:dab
+end
+
+begin
+      prog   = irexec
+      remote = FBDVR401_CODETV1
+      button = KEY_WWW
+      config = /boot/conexus.sh tv1 mode:ir
+end
+
+begin
+      prog   = irexec
+      remote = FBDVR401_CODETV1
+      button = KEY_BACK
+      config = /boot/conexus.sh tv1 mode:spotify
+end
+
+begin
+      prog   = irexec
+      remote = FBDVR401_CODETV1
+      button = KEY_INFO
+      config = /boot/conexus.sh tv1 mode:auxin
+end
+
+begin
+      prog   = irexec
+      remote = FBDVR401_CODETV1
+      button = KEY_TVRADIO
+      config = /boot/conexus.sh tv1 mode:fm
+end
+
+begin
+      prog   = irexec
+      remote = FBDVR401_CODETV1
+      button = KEY_RECORD
+      config = /boot/conexus.sh tv1 mode:bt
+end
+
+begin
+      prog   = irexec
+      remote = FBDVR401_CODETV1
+      button = KEY_OPTION
+      config = /boot/conexus.sh tv1 nextmode
+end
+
+begin
+      prog   = irexec
+      remote = FBDVR401_CODETV1
+      button = KEY_NAV
+      config = /boot/conexus.sh tv1 previousmode
+end
+
+begin
+      prog   = irexec
+      remote = FBDVR401_CODETV1
+      button = KEY_PAGEUP
+      repeat = 2
+      delay  = 4
+      config = /boot/conexus.sh tv1 nextmode
+end
+
+begin
+      prog   = irexec
+      remote = FBDVR401_CODETV1
+      button = KEY_PAGEDOWN
+      repeat = 2
+      delay  = 4
+      config = /boot/conexus.sh tv1 previousmode
+end
+
+## ------------------------------------- ##
+## ---------------  VCR1 --------------- ##
+## ------------------------------------- ##
+begin
+      prog   = irexec
+      remote = FBTV401X_CODEVCR1
+      button = KEY_POWER
+      config = /boot/conexus.sh vcr1 standby 
+end
+
+begin
+      prog   = irexec
+      remote = FBTV401X_CODEVCR1
+      button = KEY_MUTE
+      config = /boot/conexus.sh vcr1 mute 
+end
+
+begin
+      prog   = irexec
+      remote = FBTV401X_CODEVCR1
+      button = KEY_SLEEP
+      config = /boot/conexus.sh vcr1 setsleeptimer:900
+end
+
+begin
+      prog   = irexec
+      remote = FBTV401X_CODEVCR1
+      button = KEY_VOLUMEUP
+      repeat = 2
+      delay  = 4
+      config = /boot/conexus.sh vcr1 vol+
+end
+
+begin
+      prog   = irexec
+      remote = FBTV401X_CODEVCR1
+      button = KEY_VOLUMEDOWN
+      repeat = 2
+      delay  = 4
+      config = /boot/conexus.sh vcr1 vol-
+end
+
+begin
+      prog   = irexec
+      remote = FBTV401X_CODEVCR1
+      button = KEY_RIGHT
+      repeat = 2
+      delay  = 4
+      config = /boot/conexus.sh vcr1 vol+
+end
+
+begin
+      prog   = irexec
+      remote = FBTV401X_CODEVCR1
+      button = KEY_LEFT
+      repeat = 2
+      delay  = 4
+      config = /boot/conexus.sh vcr1 vol-
+end
+
+begin
+      prog   = irexec
+      remote = FBTV401X_CODEVCR1
+      button = KEY_UP
+      repeat = 2
+      delay  = 4
+      config = /boot/conexus.sh vcr1 next
+end
+
+begin
+      prog   = irexec
+      remote = FBTV401X_CODEVCR1
+      button = KEY_DOWN
+      repeat = 2
+      delay  = 4
+      config = /boot/conexus.sh vcr1 previous
+end
+
+begin
+      prog   = irexec
+      remote = FBTV401X_CODEVCR1
+      button = KEY_CHANNELUP
+      repeat = 2
+      delay  = 4
+      config = /boot/conexus.sh vcr1 nextpreset
+end
+
+begin
+      prog   = irexec
+      remote = FBTV401X_CODEVCR1
+      button = KEY_CHANNELDOWN
+      repeat = 2
+      delay  = 4
+      config = /boot/conexus.sh vcr1 previouspreset
+end
+
+begin
+      prog   = irexec
+      remote = FBTV401X_CODEVCR1
+      button = KEY_FORWARD
+      repeat = 2
+      delay  = 4
+      config = /boot/conexus.sh vcr1 next
+end
+
+begin
+      prog   = irexec
+      remote = FBTV401X_CODEVCR1
+      button = KEY_REWIND
+      repeat = 2
+      delay  = 4
+      config = /boot/conexus.sh vcr1 previous
+end
+
+begin
+      prog   = irexec
+      remote = FBTV401X_CODEVCR1
+      button = KEY_PLAYPAUSE
+      config = /boot/conexus.sh vcr1 playpause
+end
+
+begin
+      prog   = irexec
+      remote = FBTV401X_CODEVCR1
+      button = KEY_STOP
+      config = /boot/conexus.sh vcr1 pause
+end
+
+begin
+      prog   = irexec
+      remote = FBTV401X_CODEVCR1
+      button = KEY_1
+      config = /boot/conexus.sh vcr1 presetselect:0 
+end
+
+begin
+      prog   = irexec
+      remote = FBTV401X_CODEVCR1
+      button = KEY_2
+      config = /boot/conexus.sh vcr1 presetselect:1
+end
+
+begin
+      prog   = irexec
+      remote = FBTV401X_CODEVCR1
+      button = KEY_3
+      config = /boot/conexus.sh vcr1 presetselect:2
+end
+
+begin
+      prog   = irexec
+      remote = FBTV401X_CODEVCR1
+      button = KEY_4
+      config = /boot/conexus.sh vcr1 presetselect:3
+end
+
+begin
+      prog   = irexec
+      remote = FBTV401X_CODEVCR1
+      button = KEY_5
+      config = /boot/conexus.sh vcr1 presetselect:4
+end
+
+begin
+      prog   = irexec
+      remote = FBTV401X_CODEVCR1
+      button = KEY_6
+      config = /boot/conexus.sh vcr1 presetselect:5
+end
+
+begin
+      prog   = irexec
+      remote = FBTV401X_CODEVCR1
+      button = KEY_7
+      config = /boot/conexus.sh vcr1 presetselect:6
+end
+
+begin
+      prog   = irexec
+      remote = FBTV401X_CODEVCR1
+      button = KEY_8
+      config = /boot/conexus.sh vcr1 presetselect:7
+end
+
+begin
+      prog   = irexec
+      remote = FBTV401X_CODEVCR1
+      button = KEY_9
+      config = /boot/conexus.sh vcr1 presetselect:8
+end
+
+begin
+      prog   = irexec
+      remote = FBTV401X_CODEVCR1
+      button = KEY_0
+      config = /boot/conexus.sh vcr1 presetselect:9
+end
+
+begin
+      prog   = irexec
+      remote = FBTV401X_CODEVCR1
+      button = KEY_RED
+      config = /boot/conexus.sh vcr1 mode:0
+end
+
+begin
+      prog   = irexec
+      remote = FBTV401X_CODEVCR1
+      button = KEY_GREEN
+      config = /boot/conexus.sh vcr1 mode:1
+end
+
+begin
+      prog   = irexec
+      remote = FBTV401X_CODEVCR1
+      button = KEY_YELLOW
+      config = /boot/conexus.sh vcr1 mode:2
+end
+
+begin
+      prog   = irexec
+      remote = FBTV401X_CODEVCR1
+      button = KEY_BLUE
+      config = /boot/conexus.sh vcr1 mode:3
+end
+
+begin
+      prog   = irexec
+      remote = FBTV401X_CODEVCR1
+      button = KEY_MENU
+      config = /boot/conexus.sh vcr1 mode:4
+end
+
+begin
+      prog   = irexec
+      remote = FBTV401X_CODEVCR1
+      button = KEY_TIMER
+      config = /boot/conexus.sh vcr1 mode:5
+end
+
+begin
+      prog   = irexec
+      remote = FBTV401X_CODEVCR1
+      button = KEY_AUDIO
+      config = /boot/conexus.sh vcr1 mode:6
+end
+
+begin
+      prog   = irexec
+      remote = FBTV401X_CODEVCR1
+      button = KEY_ZOOM
+      config = /boot/conexus.sh vcr1 mode:7
+end
+
+begin
+      prog   = irexec
+      remote = FBTV401X_CODEVCR1
+      button = KEY_TEXT
+      config = /boot/conexus.sh vcr1 mode:8
+end
+
+begin
+      prog   = irexec
+      remote = FBTV401X_CODEVCR1
+      button = KEY_PAUSE
+      config = /boot/conexus.sh vcr1 mode:9
+end
+
+begin
+      prog   = irexec
+      remote = FBTV401X_CODEVCR1
+      button = KEY_HDMI
+      config = /boot/conexus.sh vcr1 mode:10
+end
+
+begin
+      prog   = irexec
+      remote = FBTV401X_CODEVCR1
+      button = KEY_PIP
+      config = /boot/conexus.sh vcr1 mode:11
+end
+
+begin
+      prog   = irexec
+      remote = FBTV401X_CODEVCR1
+      button = KEY_EPG
+      config = /boot/conexus.sh vcr1 mode:dab
+end
+
+begin
+      prog   = irexec
+      remote = FBTV401X_CODEVCR1
+      button = KEY_WWW
+      config = /boot/conexus.sh vcr1 mode:ir
+end
+
+begin
+      prog   = irexec
+      remote = FBTV401X_CODEVCR1
+      button = KEY_BACK
+      config = /boot/conexus.sh vcr1 mode:spotify
+end
+
+begin
+      prog   = irexec
+      remote = FBTV401X_CODEVCR1
+      button = KEY_INFO
+      config = /boot/conexus.sh vcr1 mode:auxin
+end
+
+begin
+      prog   = irexec
+      remote = FBTV401X_CODEVCR1
+      button = KEY_TVRADIO
+      config = /boot/conexus.sh vcr1 mode:fm
+end
+
+begin
+      prog   = irexec
+      remote = FBTV401X_CODEVCR1
+      button = KEY_RECORD
+      config = /boot/conexus.sh vcr1 mode:bt
+end
+
+begin
+      prog   = irexec
+      remote = FBTV401X_CODEVCR1
+      button = KEY_OPTION
+      config = /boot/conexus.sh vcr1 nextmode
+end
+
+begin
+      prog   = irexec
+      remote = FBTV401X_CODEVCR1
+      button = KEY_NAV
+      config = /boot/conexus.sh vcr1 previousmode
+end
+
+begin
+      prog   = irexec
+      remote = FBTV401X_CODEVCR1
+      button = KEY_PAGEUP
+      repeat = 2
+      delay  = 4
+      config = /boot/conexus.sh vcr1 nextmode
+end
+
+begin
+      prog   = irexec
+      remote = FBTV401X_CODEVCR1
+      button = KEY_PAGEDOWN
+      repeat = 2
+      delay  = 4
+      config = /boot/conexus.sh vcr1 previousmode
+end
+
+## ------------------------------------- ##
+## ---------------  VCR1 --------------- ##
+## ------------------------------------- ##
+begin
+      prog   = irexec
+      remote = FBTV401X_CODEVCR2
+      button = KEY_POWER
+      config = /boot/conexus.sh vcr2 standby 
+end
+
+begin
+      prog   = irexec
+      remote = FBTV401X_CODEVCR2
+      button = KEY_MUTE
+      config = /boot/conexus.sh vcr2 mute 
+end
+
+begin
+      prog   = irexec
+      remote = FBTV401X_CODEVCR2
+      button = KEY_SLEEP
+      config = /boot/conexus.sh vcr2 setsleeptimer:900
+end
+
+begin
+      prog   = irexec
+      remote = FBTV401X_CODEVCR2
+      button = KEY_VOLUMEUP
+      repeat = 2
+      delay  = 4
+      config = /boot/conexus.sh vcr2 vol+
+end
+
+begin
+      prog   = irexec
+      remote = FBTV401X_CODEVCR2
+      button = KEY_VOLUMEDOWN
+      repeat = 2
+      delay  = 4
+      config = /boot/conexus.sh vcr2 vol-
+end
+
+begin
+      prog   = irexec
+      remote = FBTV401X_CODEVCR2
+      button = KEY_RIGHT
+      repeat = 2
+      delay  = 4
+      config = /boot/conexus.sh vcr2 vol+
+end
+
+begin
+      prog   = irexec
+      remote = FBTV401X_CODEVCR2
+      button = KEY_LEFT
+      repeat = 2
+      delay  = 4
+      config = /boot/conexus.sh vcr2 vol-
+end
+
+begin
+      prog   = irexec
+      remote = FBTV401X_CODEVCR2
+      button = KEY_UP
+      repeat = 2
+      delay  = 4
+      config = /boot/conexus.sh vcr2 next
+end
+
+begin
+      prog   = irexec
+      remote = FBTV401X_CODEVCR2
+      button = KEY_DOWN
+      repeat = 2
+      delay  = 4
+      config = /boot/conexus.sh vcr2 previous
+end
+
+begin
+      prog   = irexec
+      remote = FBTV401X_CODEVCR2
+      button = KEY_CHANNELUP
+      repeat = 2
+      delay  = 4
+      config = /boot/conexus.sh vcr2 nextpreset
+end
+
+begin
+      prog   = irexec
+      remote = FBTV401X_CODEVCR2
+      button = KEY_CHANNELDOWN
+      repeat = 2
+      delay  = 4
+      config = /boot/conexus.sh vcr2 previouspreset
+end
+
+begin
+      prog   = irexec
+      remote = FBTV401X_CODEVCR2
+      button = KEY_FORWARD
+      repeat = 2
+      delay  = 4
+      config = /boot/conexus.sh vcr2 next
+end
+
+begin
+      prog   = irexec
+      remote = FBTV401X_CODEVCR2
+      button = KEY_REWIND
+      repeat = 2
+      delay  = 4
+      config = /boot/conexus.sh vcr2 previous
+end
+
+begin
+      prog   = irexec
+      remote = FBTV401X_CODEVCR2
+      button = KEY_PLAYPAUSE
+      config = /boot/conexus.sh vcr2 playpause
+end
+
+begin
+      prog   = irexec
+      remote = FBTV401X_CODEVCR2
+      button = KEY_STOP
+      config = /boot/conexus.sh vcr2 pause
+end
+
+begin
+      prog   = irexec
+      remote = FBTV401X_CODEVCR2
+      button = KEY_1
+      config = /boot/conexus.sh vcr2 presetselect:0 
+end
+
+begin
+      prog   = irexec
+      remote = FBTV401X_CODEVCR2
+      button = KEY_2
+      config = /boot/conexus.sh vcr2 presetselect:1
+end
+
+begin
+      prog   = irexec
+      remote = FBTV401X_CODEVCR2
+      button = KEY_3
+      config = /boot/conexus.sh vcr2 presetselect:2
+end
+
+begin
+      prog   = irexec
+      remote = FBTV401X_CODEVCR2
+      button = KEY_4
+      config = /boot/conexus.sh vcr2 presetselect:3
+end
+
+begin
+      prog   = irexec
+      remote = FBTV401X_CODEVCR2
+      button = KEY_5
+      config = /boot/conexus.sh vcr2 presetselect:4
+end
+
+begin
+      prog   = irexec
+      remote = FBTV401X_CODEVCR2
+      button = KEY_6
+      config = /boot/conexus.sh vcr2 presetselect:5
+end
+
+begin
+      prog   = irexec
+      remote = FBTV401X_CODEVCR2
+      button = KEY_7
+      config = /boot/conexus.sh vcr2 presetselect:6
+end
+
+begin
+      prog   = irexec
+      remote = FBTV401X_CODEVCR2
+      button = KEY_8
+      config = /boot/conexus.sh vcr2 presetselect:7
+end
+
+begin
+      prog   = irexec
+      remote = FBTV401X_CODEVCR2
+      button = KEY_9
+      config = /boot/conexus.sh vcr2 presetselect:8
+end
+
+begin
+      prog   = irexec
+      remote = FBTV401X_CODEVCR2
+      button = KEY_0
+      config = /boot/conexus.sh vcr2 presetselect:9
+end
+
+begin
+      prog   = irexec
+      remote = FBTV401X_CODEVCR2
+      button = KEY_RED
+      config = /boot/conexus.sh vcr2 mode:0
+end
+
+begin
+      prog   = irexec
+      remote = FBTV401X_CODEVCR2
+      button = KEY_GREEN
+      config = /boot/conexus.sh vcr2 mode:1
+end
+
+begin
+      prog   = irexec
+      remote = FBTV401X_CODEVCR2
+      button = KEY_YELLOW
+      config = /boot/conexus.sh vcr2 mode:2
+end
+
+begin
+      prog   = irexec
+      remote = FBTV401X_CODEVCR2
+      button = KEY_BLUE
+      config = /boot/conexus.sh vcr2 mode:3
+end
+
+begin
+      prog   = irexec
+      remote = FBTV401X_CODEVCR2
+      button = KEY_MENU
+      config = /boot/conexus.sh vcr2 mode:4
+end
+
+begin
+      prog   = irexec
+      remote = FBTV401X_CODEVCR2
+      button = KEY_TIMER
+      config = /boot/conexus.sh vcr2 mode:5
+end
+
+begin
+      prog   = irexec
+      remote = FBTV401X_CODEVCR2
+      button = KEY_AUDIO
+      config = /boot/conexus.sh vcr2 mode:6
+end
+
+begin
+      prog   = irexec
+      remote = FBTV401X_CODEVCR2
+      button = KEY_ZOOM
+      config = /boot/conexus.sh vcr2 mode:7
+end
+
+begin
+      prog   = irexec
+      remote = FBTV401X_CODEVCR2
+      button = KEY_TEXT
+      config = /boot/conexus.sh vcr2 mode:8
+end
+
+begin
+      prog   = irexec
+      remote = FBTV401X_CODEVCR2
+      button = KEY_PAUSE
+      config = /boot/conexus.sh vcr2 mode:9
+end
+
+begin
+      prog   = irexec
+      remote = FBTV401X_CODEVCR2
+      button = KEY_HDMI
+      config = /boot/conexus.sh vcr2 mode:10
+end
+
+begin
+      prog   = irexec
+      remote = FBTV401X_CODEVCR2
+      button = KEY_PIP
+      config = /boot/conexus.sh vcr2 mode:11
+end
+
+begin
+      prog   = irexec
+      remote = FBTV401X_CODEVCR2
+      button = KEY_EPG
+      config = /boot/conexus.sh vcr2 mode:dab
+end
+
+begin
+      prog   = irexec
+      remote = FBTV401X_CODEVCR2
+      button = KEY_WWW
+      config = /boot/conexus.sh vcr2 mode:ir
+end
+
+begin
+      prog   = irexec
+      remote = FBTV401X_CODEVCR2
+      button = KEY_BACK
+      config = /boot/conexus.sh vcr2 mode:spotify
+end
+
+begin
+      prog   = irexec
+      remote = FBTV401X_CODEVCR2
+      button = KEY_INFO
+      config = /boot/conexus.sh vcr2 mode:auxin
+end
+
+begin
+      prog   = irexec
+      remote = FBTV401X_CODEVCR2
+      button = KEY_TVRADIO
+      config = /boot/conexus.sh vcr2 mode:fm
+end
+
+begin
+      prog   = irexec
+      remote = FBTV401X_CODEVCR2
+      button = KEY_RECORD
+      config = /boot/conexus.sh vcr2 mode:bt
+end
+
+begin
+      prog   = irexec
+      remote = FBTV401X_CODEVCR2
+      button = KEY_OPTION
+      config = /boot/conexus.sh vcr2 nextmode
+end
+
+begin
+      prog   = irexec
+      remote = FBTV401X_CODEVCR2
+      button = KEY_NAV
+      config = /boot/conexus.sh vcr2 previousmode
+end
+
+begin
+      prog   = irexec
+      remote = FBTV401X_CODEVCR2
+      button = KEY_PAGEUP
+      repeat = 2
+      delay  = 4
+      config = /boot/conexus.sh vcr2 nextmode
+end
+
+begin
+      prog   = irexec
+      remote = FBTV401X_CODEVCR2
+      button = KEY_PAGEDOWN
+      repeat = 2
+      delay  = 4
+      config = /boot/conexus.sh vcr2 previousmode
+end
+
+## ------------------------------------- ##
+## ---------------  VCR1 --------------- ##
+## ------------------------------------- ##
+begin
+      prog   = irexec
+      remote = FBTV401X_CODETV2
+      button = KEY_POWER
+      config = /boot/conexus.sh tv2 standby 
+end
+
+begin
+      prog   = irexec
+      remote = FBTV401X_CODETV2
+      button = KEY_MUTE
+      config = /boot/conexus.sh tv2 mute 
+end
+
+begin
+      prog   = irexec
+      remote = FBTV401X_CODETV2
+      button = KEY_SLEEP
+      config = /boot/conexus.sh tv2 setsleeptimer:900
+end
+
+begin
+      prog   = irexec
+      remote = FBTV401X_CODETV2
+      button = KEY_VOLUMEUP
+      repeat = 2
+      delay  = 4
+      config = /boot/conexus.sh tv2 vol+
+end
+
+begin
+      prog   = irexec
+      remote = FBTV401X_CODETV2
+      button = KEY_VOLUMEDOWN
+      repeat = 2
+      delay  = 4
+      config = /boot/conexus.sh tv2 vol-
+end
+
+begin
+      prog   = irexec
+      remote = FBTV401X_CODETV2
+      button = KEY_RIGHT
+      repeat = 2
+      delay  = 4
+      config = /boot/conexus.sh tv2 vol+
+end
+
+begin
+      prog   = irexec
+      remote = FBTV401X_CODETV2
+      button = KEY_LEFT
+      repeat = 2
+      delay  = 4
+      config = /boot/conexus.sh tv2 vol-
+end
+
+begin
+      prog   = irexec
+      remote = FBTV401X_CODETV2
+      button = KEY_UP
+      repeat = 2
+      delay  = 4
+      config = /boot/conexus.sh tv2 next
+end
+
+begin
+      prog   = irexec
+      remote = FBTV401X_CODETV2
+      button = KEY_DOWN
+      repeat = 2
+      delay  = 4
+      config = /boot/conexus.sh tv2 previous
+end
+
+begin
+      prog   = irexec
+      remote = FBTV401X_CODETV2
+      button = KEY_CHANNELUP
+      repeat = 2
+      delay  = 4
+      config = /boot/conexus.sh tv2 nextpreset
+end
+
+begin
+      prog   = irexec
+      remote = FBTV401X_CODETV2
+      button = KEY_CHANNELDOWN
+      repeat = 2
+      delay  = 4
+      config = /boot/conexus.sh tv2 previouspreset
+end
+
+begin
+      prog   = irexec
+      remote = FBTV401X_CODETV2
+      button = KEY_FORWARD
+      repeat = 2
+      delay  = 4
+      config = /boot/conexus.sh tv2 next
+end
+
+begin
+      prog   = irexec
+      remote = FBTV401X_CODETV2
+      button = KEY_REWIND
+      repeat = 2
+      delay  = 4
+      config = /boot/conexus.sh tv2 previous
+end
+
+begin
+      prog   = irexec
+      remote = FBTV401X_CODETV2
+      button = KEY_PLAYPAUSE
+      config = /boot/conexus.sh tv2 playpause
+end
+
+begin
+      prog   = irexec
+      remote = FBTV401X_CODETV2
+      button = KEY_STOP
+      config = /boot/conexus.sh tv2 pause
+end
+
+begin
+      prog   = irexec
+      remote = FBTV401X_CODETV2
+      button = KEY_1
+      config = /boot/conexus.sh tv2 presetselect:0 
+end
+
+begin
+      prog   = irexec
+      remote = FBTV401X_CODETV2
+      button = KEY_2
+      config = /boot/conexus.sh tv2 presetselect:1
+end
+
+begin
+      prog   = irexec
+      remote = FBTV401X_CODETV2
+      button = KEY_3
+      config = /boot/conexus.sh tv2 presetselect:2
+end
+
+begin
+      prog   = irexec
+      remote = FBTV401X_CODETV2
+      button = KEY_4
+      config = /boot/conexus.sh tv2 presetselect:3
+end
+
+begin
+      prog   = irexec
+      remote = FBTV401X_CODETV2
+      button = KEY_5
+      config = /boot/conexus.sh tv2 presetselect:4
+end
+
+begin
+      prog   = irexec
+      remote = FBTV401X_CODETV2
+      button = KEY_6
+      config = /boot/conexus.sh tv2 presetselect:5
+end
+
+begin
+      prog   = irexec
+      remote = FBTV401X_CODETV2
+      button = KEY_7
+      config = /boot/conexus.sh tv2 presetselect:6
+end
+
+begin
+      prog   = irexec
+      remote = FBTV401X_CODETV2
+      button = KEY_8
+      config = /boot/conexus.sh tv2 presetselect:7
+end
+
+begin
+      prog   = irexec
+      remote = FBTV401X_CODETV2
+      button = KEY_9
+      config = /boot/conexus.sh tv2 presetselect:8
+end
+
+begin
+      prog   = irexec
+      remote = FBTV401X_CODETV2
+      button = KEY_0
+      config = /boot/conexus.sh tv2 presetselect:9
+end
+
+begin
+      prog   = irexec
+      remote = FBTV401X_CODETV2
+      button = KEY_RED
+      config = /boot/conexus.sh tv2 mode:0
+end
+
+begin
+      prog   = irexec
+      remote = FBTV401X_CODETV2
+      button = KEY_GREEN
+      config = /boot/conexus.sh tv2 mode:1
+end
+
+begin
+      prog   = irexec
+      remote = FBTV401X_CODETV2
+      button = KEY_YELLOW
+      config = /boot/conexus.sh tv2 mode:2
+end
+
+begin
+      prog   = irexec
+      remote = FBTV401X_CODETV2
+      button = KEY_BLUE
+      config = /boot/conexus.sh tv2 mode:3
+end
+
+begin
+      prog   = irexec
+      remote = FBTV401X_CODETV2
+      button = KEY_MENU
+      config = /boot/conexus.sh tv2 mode:4
+end
+
+begin
+      prog   = irexec
+      remote = FBTV401X_CODETV2
+      button = KEY_TIMER
+      config = /boot/conexus.sh tv2 mode:5
+end
+
+begin
+      prog   = irexec
+      remote = FBTV401X_CODETV2
+      button = KEY_AUDIO
+      config = /boot/conexus.sh tv2 mode:6
+end
+
+begin
+      prog   = irexec
+      remote = FBTV401X_CODETV2
+      button = KEY_ZOOM
+      config = /boot/conexus.sh tv2 mode:7
+end
+
+begin
+      prog   = irexec
+      remote = FBTV401X_CODETV2
+      button = KEY_TEXT
+      config = /boot/conexus.sh tv2 mode:8
+end
+
+begin
+      prog   = irexec
+      remote = FBTV401X_CODETV2
+      button = KEY_PAUSE
+      config = /boot/conexus.sh tv2 mode:9
+end
+
+begin
+      prog   = irexec
+      remote = FBTV401X_CODETV2
+      button = KEY_HDMI
+      config = /boot/conexus.sh tv2 mode:10
+end
+
+begin
+      prog   = irexec
+      remote = FBTV401X_CODETV2
+      button = KEY_PIP
+      config = /boot/conexus.sh tv2 mode:11
+end
+
+begin
+      prog   = irexec
+      remote = FBTV401X_CODETV2
+      button = KEY_EPG
+      config = /boot/conexus.sh tv2 mode:dab
+end
+
+begin
+      prog   = irexec
+      remote = FBTV401X_CODETV2
+      button = KEY_WWW
+      config = /boot/conexus.sh tv2 mode:ir
+end
+
+begin
+      prog   = irexec
+      remote = FBTV401X_CODETV2
+      button = KEY_BACK
+      config = /boot/conexus.sh tv2 mode:spotify
+end
+
+begin
+      prog   = irexec
+      remote = FBTV401X_CODETV2
+      button = KEY_INFO
+      config = /boot/conexus.sh tv2 mode:auxin
+end
+
+begin
+      prog   = irexec
+      remote = FBTV401X_CODETV2
+      button = KEY_TVRADIO
+      config = /boot/conexus.sh tv2 mode:fm
+end
+
+begin
+      prog   = irexec
+      remote = FBTV401X_CODETV2
+      button = KEY_RECORD
+      config = /boot/conexus.sh tv2 mode:bt
+end
+
+begin
+      prog   = irexec
+      remote = FBTV401X_CODETV2
+      button = KEY_OPTION
+      config = /boot/conexus.sh tv2 nextmode
+end
+
+begin
+      prog   = irexec
+      remote = FBTV401X_CODETV2
+      button = KEY_NAV
+      config = /boot/conexus.sh tv2 previousmode
+end
+
+begin
+      prog   = irexec
+      remote = FBTV401X_CODETV2
+      button = KEY_PAGEUP
+      repeat = 2
+      delay  = 4
+      config = /boot/conexus.sh tv2 nextmode
+end
+
+begin
+      prog   = irexec
+      remote = FBTV401X_CODETV2
+      button = KEY_PAGEDOWN
+      repeat = 2
+      delay  = 4
+      config = /boot/conexus.sh tv2 previousmode
+end
+
+end irexec
