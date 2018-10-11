@@ -1,0 +1,230 @@
+<html>
+<head>
+<meta name="author" content="Alexander feuster">
+<meta name="date" content="2018-10-11T16:00:00+02:00">
+<meta name="description" content="CONEXUS IR Raspberry Pi: IR remote control replacement for Frontier Silicon based devices like the TechniSat DigitRadio or AudioMaster series">
+<meta name="keywords" content="CONEXUS, Raspberry Pi, TechniSat, DigitRadio, AudioMaster, Frontier Silicon, FSAPI, Infrared, Remote Control">
+<title>CONEXUS IR Raspberry Pi Assembly Instructions</title>
+<style>
+body {font-family: Verdana, Arial, Helvetica, sans-serif; font-size:1em; background-color:#FEFEFF; }
+h1 {padding:8px; border:1px solid #000035; border-radius:8px; box-shadow:0 0 10px #000035; background-color:#A0A0FF}
+h2 {padding:6px; border:1px solid #000035; border-radius:8px; box-shadow:0 0 8px #000035; background-color:#FFA0A0}
+h3 {padding:4px; border:1px solid #000035; border-radius:8px; box-shadow:0 0 6px #000035; background-color:#A0FFA0}
+#code {font-family: monospace; font-color:#000000; font-size:1.5em; padding:4px; border:1px solid #000035; border-radius:4px; box-shadow:0 0 5px #000035; background-color:#F0F0F0}
+#atop {text-decoration:none; padding:4px; border:1px solid #000035; border-radius:8px; box-shadow:0 0 6px #000035; background-color:#FFFF80}
+</style></head>
+<body>
+<h1 id="top"><center>CONEXUS IR Raspberry Pi<br>by Alexander Feuster</center></h1>
+<br>
+
+
+<h2>About</h2>
+The CONEXUS IR Raspberry Pi is a IR remote control replacement for Frontier Silicon based devices like the TechniSat DigitRadio or AudioMaster series which do not have an IR remote support on their own.<br>
+The CONEXUS IR project aims to make these devices usable with a regular TechniSat IR remote control by translating the IR commands into network API control commands which are supported.<br><br>
+<p align="right"><a href="#top" id="atop">Top</a></p><br><br><br>
+
+
+<h2>License</h2>
+All CONEXUS IR project related files (binaries, source codes, scripts, graphics etc.) are provided "as-is" without any warranties for any data loss, device defects etc. Use at own risk!<br>
+Free for personal use. Commercial use is prohibited without permission.<br><br>
+<p align="right"><a href="#top" id="atop">Top</a></p><br><br><br>
+
+
+<h2>Content</h2>
+<ul>
+<li><a href="#Prerequisites">Prerequisites</a>
+<li><a href="#Infrared_receiver_extension">Infrared receiver extension</a>
+<li><a href="#Raspberry_Pi">Raspberry Pi</a>
+<li><a href="#LIRC">LIRC / LED control</a>
+<li><a href="#CONEXUS">CONEXUS</a>
+<li><a href="#Github">Copyright & Github</a>
+</ul>
+<p align="right"><a href="#top" id="atop">Top</a></p><br><br><br>
+
+
+<h2 id="Prerequisites">Prerequisites</h2>
+For the CONEXUS IR Raspberry Pi assembly there are following prerequisites:
+<ul>
+<li>Infrared receiver extension
+<li>Raspberry Pi 
+<li>SD card with installed Linux (Raspbian "Stretch" recommended)
+<li>LIRC configuration files
+<li>CONEXUS and CONEXUS CONFIG SERVER binaries
+<li>TechniSat IR Remote control for e.g. FBDVR401, FBDVR451, FBTV451 etc.
+</ul>
+<p align="right"><a href="#top" id="atop">Top</a></p><br><br><br>
+
+
+<h2 id="Infrared_receiver_extension">Infrared receiver extension</h2>
+The CONEXUS IR modification needs a hardware extension to make the Raspberry Pi capable of receiving infrared codes send by a remote control.<br>
+Since this project is intended to be used with original TechniSat remote controls all particular points in this instruction manual following hardware and software will be related to this.<br>
+If you want to use a different IR remote control you need to adapt the IR reception hardware as also the overall LIRC configuration and the "conexus.sh" BASH script.<br>
+<br>
+Since the TechniSat remote controls are based on the Philips RC5 infrared systemcodes the infrared receiver needs to be a 36kHz variant to work properly.<br>
+For this project only the TSOP34836 IR receiver module has been tested and used but there may be also other compatible IR receiver modules working with 36kHz.
+In case you do not use the TSOP34836 you need to figure out another compatible type on yourself.<br>
+The second part of the IR hardware extension is a status LED which will be used as confirmation for a received IR command. This part consist just of 2 parts: a low current LED and a resistor.
+In case you want use another LED check and cahnge the resistor value according to this different LED specification.<br>
+The wiring of the IR hardware extension is not complicated and can be done directly to the Raspberry Pi pins.
+Alternatively it can be also done onto a separate pin connector which allows the extension to be plugged and removed from the Raspberry Pi pin connector on demand.<br><br>
+<h3>Raspberry Pi IR extension PCB wiring schemata</h3>
+<center><a href="Conexus_IR_Raspberry_PCB.png" target="_blank"><img src="Conexus_IR_Raspberry_PCB.png" border="0" width="414" height="608" alt="Raspberry Pi IR extension PCB wiring schemata"></a></center>
+<h3>Raspberry Pi IR extension PCB circuit schemata</h3>
+<center><a href="Conexus_IR_Raspberry_Circuit.png" target="_blank"><img src="Conexus_IR_Raspberry_Circuit.png" border="0" width="474" height="466" alt="Raspberry Pi IR extension PCB circuit schemata"></a></center>
+<p align="right"><a href="#top" id="atop">Top</a></p><br><br><br>
+
+
+<h2 id="Raspberry_Pi">Raspberry Pi</h2>
+The CONEXUS IR should run on every Raspberry Pi model with the depending binaries. So choose your preferred model.<br>
+To run CONEXUS IR you need Linux as OS on your Raspberry Pi. The CONEXUS project binaries have been compiled and tested with Raspbian "Stretch".
+Although it might work on other distributions it is recommended to use an actual Raspbian release.
+The next steps will describe a new system setup. If you are using an already existing system on your Raspberry Pi some steps may not be needed or may vary.<br>
+
+<h3>Steps</h3>
+Download an actual Debian release image from the official Raspberry.org website.
+<p id="code">Raspbian Download: <a href="https://www.raspberrypi.org/downloads/raspbian/" target="_blank">https://www.raspberrypi.org/downloads/raspbian/</a></p>
+It is recommended to use the the "DESKTOP" variant but the "LITE" variant should work also but is more inconvenient to handle.<br><br>
+To install the Raspbian image on the
+ SD card proceed as in the following manual described:
+<p id="code">Raspbian Image Installation: <a href="https://www.raspberrypi.org/documentation/installation/installing-images/README.md" target="_blank">https://www.raspberrypi.org/documentation/installation/installing-images/README.md</a></p>
+There are also other ways possible to install the Raspbian image on a SD card, for e.g. with the "dd" command on Linux. Check google for according How-To's.<br><br>
+
+After the image has been written on the SD card, insert the SD card into your Raspberry Pi, boot it up and configure it for your needs.<br>
+If the Raspberry Pi is connected via LAN to your local network in most cases the standard DHCP setting should work fine. In case you are using WIFI or the Raspberry Pi should run with a static network setting,
+do also configure youre network setting before proceeding.<br>
+Keep in mind that the CONEXUS IR Rasperry Pi and the remote radio or loudspeaker which is inteded to be controlled need to be within the same local network!
+<br><br>
+The Raspbian OS should now be actualized.
+If you are running Raspbian with desktop open for e.g. "LXTerminal" from the main menu and update the system with the following command line:
+<p id="code">sudo apt-get update -y && sudo apt-get upgrade -y<p>
+Your system should be now up-to-date.<br><br>
+Now you can change your Raspberry Pi's host name. This is optional but makes things later easier when using the CONEXUS configuration server.
+In terminal enter the following command:
+<p id="code">sudo raspi-config</p>
+Now choose menu:
+<p id="code">2 Network Options "Configure network settings"</p>
+and the menu item:
+<p id="code">N1 Hostname "Set the visible name for this Pi"</p>
+Here you can enter the new host name. This manual will refer from now on with the name "CONEXUS" so enter:
+<p id="code">CONEXUS</p>
+Leave the Raspberry Pi Software Configuration Tool with:
+<p id="code">&lt;Finish&gt;</p>
+and let the Raspberry Pi reboot.
+<br><br>
+The Raspberry Pi should no be ready to be used as base for CONEXUS IR.<br><br>
+<p align="right"><a href="#top" id="atop">Top</a></p><br><br><br>
+
+
+<h2 id="LIRC">LIRC / LED control</h2>
+The CONEXUS IR does not only depend on the IR hardware modification it needs also a software to identify, analyze and execute the received infrared commands send from the IR remote. This is done with LIRC ("Linux Infrared Remote Control").<br>
+The status LED which shall signalize a received IR command needs also to be controlled via the connected GPIO pin. The GPIO control will be handled with WiringPi ("GPIO Interface library for the Raspberry Pi")<br>
+
+<h3>Steps</h3>
+To install the needed packages open the terminal again and enter the following command line:
+<p id="code">sudo apt-get install lirc wiringpi</p>
+Depending on your system these packages can be already installed or may be just upgraded to newer versions.
+<br><br>
+LIRC needs additional setup steps. Therefore we need a texteditor. On a desktop system you can use for e.g. "LEAFPAD", within a terminal or on a LITE Raspbian "NANO".
+This manual will refer to nano. If you want to use your preferred texteditor or Leafpad you have to adapt all command lines with "nano" according to your texteditor!
+<br><br>
+To enable the lirc-rpi kernel module enter in the terminal:
+<p id="code">sudo nano /boot/config.txt</p>
+Scroll to the line:
+<p id="code"># Uncomment this to enable the lirc-rpi module<p>
+If there is already a "dtoverlay=lirc-rpi..." entry available change the existing line to "#dtoverlay=lirc-rpi..." by adding a "#". Now add there:
+<p id="code">dtoverlay=lirc-rpi,gpio_out_pin=17,gpio_in_pin=18,gpio_in_pull=up</p>
+Now save the edited file and close nano with CTRL+O and CTRL+X.<br>
+Keep in mind that this gpio_in_pin configuration must be exactly the same (pin 18) as in the IR receiver hardware modification!<br>
+The gpio_out_pin needs to be set for the LIRC kernel module but is not used for CONEXUS IR since this outgoin pin is only for IR diodes which transmit IR codes instead of receiving them.
+<br><br>
+Now open the LIRC configuration with:
+<p id="code">sudo nano /etc/lirc/lirc_options.conf</p>
+and change the following to entries to these values:
+<p id="code">
+driver&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;= default<br>
+device&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;= /dev/lirc0</p>
+Now save the edited file and close nano with CTRL+O and CTRL+X.<br><br>
+LIRC now needs the remote codes from the used IR remote to identify these IR commands. All known TechniSat codes can be found in:
+<p id="code">File: TECHNISAT_RC5.conf</p>
+Copy this file with a file explorer or via Linux "cp" command to:
+<p id="code">/etc/lirc/lircd.conf.d/TECHNISAT_RC5.conf</p>
+LIRC needs also to know what an single IR command should execute. All these IR command bindings can be found in:
+<p id="code">File: lircrc</p>
+Copy this file with a file explorer or via Linux "cp" command to:
+<p id="code">/etc/lirc/lircrc</p>
+If the file does already exist do overwrite it.<br><br>
+These binding are executed by LIRC's "irexec". To start "irexec" after every Raspberry Pi boot we need to set up a cron job.<br>
+Open a terminal and enter:
+<p id="code">crontab -e</p>
+Now add the following line:
+<p id="code">@reboot /usr/bin/irexec -d /etc/lirc/lircrc</p>
+Now save the edited file and close with CTRL+O and CTRL+X.<br><br>
+The LIRC part of CONEXUS IR is now installed and configured.<br><br>
+<p align="right"><a href="#top" id="atop">Top</a></p><br><br><br>
+
+
+<h2 id="CONEXUS">CONEXUS</h2>
+The IR commands recognized by LIRC need to be executed and to be send via network to the remote device.<br>
+Therefore we need a CONEXUS binary and an additional Bash script.<br>
+
+<h3>Steps</h3>
+Depending on your Raspberry Pi model you need to choose the appropriate binary archive.<br>
+For Raspberry Pi <font color="red">1</font color> and Raspberry Pi <font color="red">Zero</font color>:
+<p id="code">Archive: CONEXUS-2.4-ARM-RPI<font color="red">1</font color>.tar.gz</p>
+For Raspberry Pi <font color="red">2</font color> and Raspberry Pi <font color="red">3</font color>:
+<p id="code">Archive: CONEXUS-2.4-ARM-RPI<font color="red">2</font color>.tar.gz</p>
+Extract the archive and copy the binary "Conexus-ARM" to:
+<p id="code">/usr/bin/conexus</p>
+and make it executable:
+<p id="code">sudo chmod 755 /usr/bin/conexus</p>
+<br><br>
+If you need to compile your own CONEXUS binary check Github for the sourcecode:
+<p id="code">CONEXUS CLI repository: <a href="https://github.com/feuster/Conexus_CLI" target="_blank">https://github.com/feuster/Conexus_CLI</a></p>
+<br><br>
+Now copy the Bash script "conexus.sh" to:
+<p id="code">/boot/conexus.sh</p>
+and make it also executable:
+<p id="code">sudo chmod 755 /boot/conexus.sh</p>
+If you do not want to use the optional CONEXUS Config Server you will have to edit the "conexus.sh" Bash script:
+<p id="code">sudo nano /boot/conexus.sh</p>
+Edit your desired IR code and the IP of the device which you want to remote control. Change also the PIN if it is not the default 1234.<br>
+Do not edit anything else!<br>
+Now save the edited file and close with CTRL+O and CTRL+X.<br><br>
+Optional you can also install the CONEXUS Config Server which provides a webinterface for an easy configuration of the remote device within the "conexus.sh" Bash script.<br>
+
+Depending on your Raspberry Pi model you need to choose the appropriate binary archive.<br>
+For Raspberry Pi <font color="red">1</font color> and Raspberry Pi <font color="red">Zero</font color>:
+<p id="code">Archive: CONEXUSCFGSVR-1.0-ARM-RPI<font color="red">1</font color>.tar.gz</p>
+For Raspberry Pi <font color="red">2</font color> and Raspberry Pi <font color="red">3</font color>:
+<p id="code">Archive: CONEXUSCFGSVR-1.0-ARM-RPI<font color="red">2</font color>.tar.gz</p>
+Extract the archive and copy the binary "ConexusCfgSvr-ARM" to:
+<p id="code">/usr/bin/conexuscfgsvr</p>
+and make it executable:
+<p id="code">sudo chmod 755 /usr/bin/conexuscfgsvr</p>
+<br><br>
+If you need to compile your own CONEXUS Config Server binary check Github for the sourcecode:
+<p id="code">CONEXUS Config Server repository: <a href="https://github.com/feuster/Conexus_Config_Server" target="_blank">https://github.com/feuster/Conexus_Config_Server</a></p>
+<br><br>
+The CONEXUS Config Server must be started after every Raspberry Pi boot so we need to set up another cron job.<br>
+Open a terminal and enter:
+<p id="code">crontab -e</p>
+Now add the following line:
+<p id="code">@reboot sudo /usr/bin/conexuscfgsvr -s /boot/conexus.sh</p>
+Now save the edited file and close with CTRL+O and CTRL+X.<br><br>
+The CONEXUS Config Server is now installed and configured.
+<br><br><br>
+To run every software component properly we need a last reboot by a powercut or by following terminal command:
+<p id="code">sudo reboot</p>
+If you have already configured the "conexus.sh" Bash script properly CONEXUS IR should already be useable.<br>
+If you are using the CONEXUS Config Server you can now edit the remote configuration within your browser by calling:
+<p id="code">CONEXUS Config Webinterface: <a href="http://conexus" target="_blank">http://conexus</a></p>
+If your local LAN does not redirect to the CONEXUS hostname you can still call the webinterface by the local IP of the Raspberry Pi.<br><br>
+Within the Webinterface you can easily change the remote device settings on-the-fly so after a change a restart is not needed.<br><br>
+<p align="right"><a href="#top" id="atop">Top</a></p><br><br><br>
+
+
+<h2 id="Github">Copyright & Github</h2><br>
+<h1><center>CONEXUS IR Raspberry Pi<br>by Alexander Feuster<br>Copyright 2018<br><br>Find the latest revision of this document at:<br><a href="https://github.com/feuster/Conexus_IR_RPi" target="_blank">https://github.com/feuster/Conexus_IR_RPi</a></center></h1>
+
+</body>
+</html>
